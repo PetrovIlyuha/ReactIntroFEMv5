@@ -1,0 +1,25 @@
+{
+  "name": "Adopt-me",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier \"src/**/*.{js,html}\" --write",
+    "lint": "eslint \"**/*.{js,jsx}\" --quiet",
+    "dev": "parcel src/index.html --safe write"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^1.18.2"
+  },
+  "dependencies": {
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  }
+}
