@@ -1,12 +1,12 @@
 * {
   box-sizing: border-box;
-  color: #333;
+  color: rgb(75, 65, 65);
+  font-weight: bold;
 }
 
 body {
-  background-color: #81a69b;
-  background-image: url(http://static.frontendmasters.com/resources/2019-05-02-complete-intro-react-v5/image-background.png);
-  margin: 0;
+  background: linear-gradient(to left, #eecda3, #ef629f);
+  margin: 0 auto;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -16,21 +16,23 @@ body {
 }
 
 .search-params form {
-  background-color: #d9c148;
+  background: linear-gradient(to left, #ba5370, #f4e2d8);
   width: 360px;
   margin: 0px 25px 0px 0px;
   padding: 35px 15px 15px 15px;
   border-radius: 5px;
   float: left;
+  color: #755b5b;
 }
 
 .search {
-  background-color: #d9c148;
+  background: linear-gradient(to right, #2980b9, #2c3e50);
   width: 715px;
   padding: 15px;
   border-radius: 9px;
   float: left;
   margin-bottom: 25px;
+  color: rgb(183, 241, 241);
 }
 
 .spinner {
@@ -60,8 +62,7 @@ body {
 .details {
   width: 1100px;
   margin: 0 auto;
-  background-color: #d9c148;
-  padding: 15px;
+  background: linear-gradient(to left, #4ca1af, #c4e0e5);
   border-radius: 9px;
   margin-bottom: 25px;
 }
@@ -101,7 +102,7 @@ body {
   white-space: nowrap;
   font-weight: normal;
   font-size: 30px;
-  color: #bf3334;
+  color: #a4a4a4;
   width: 95%;
   overflow: hidden;
   margin: 0;
@@ -151,7 +152,7 @@ header {
 
 .details h1 {
   text-align: center;
-  color: #bf3334;
+  color: #e4dede;
   font-size: 60px;
   margin: 5px 0px;
 }
