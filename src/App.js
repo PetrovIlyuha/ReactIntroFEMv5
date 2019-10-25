@@ -1,10 +1,12 @@
 import React, { useState, lazy, Suspense } from "react";
 import ReactDOM from "react-dom";
 import { Router, Link } from "@reach/router";
-import SearchParams from "./SearchParams";
 import ThemeContext from "./ThemeContext";
+import _ from "lodash";
+import moment from "moment";
 
 const Details = lazy(() => import("./Details"));
+const SearchParams = lazy(() => import("./SearchParams"));
 
 const App = () => {
   const themeHook = useState("teal");

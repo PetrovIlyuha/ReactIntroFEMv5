@@ -1,11 +1,11 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import pet from "@frontendmasters/pet";
 import { navigate } from "@reach/router";
-import Modal from "./Modal";
 import Carousel from "./Carousel";
 import ErrorBoundary from "./ErrorBoundary";
 import ThemeContext from "./ThemeContext";
 
+const Modal = lazy(() => import("./Modal"));
 class Details extends React.Component {
   state = { loading: true, showModal: false };
   componentDidMount() {
@@ -60,17 +60,19 @@ class Details extends React.Component {
 
           <p>{description}</p>
           {showModal ? (
-            <Modal>
-              <div>
-                <h1>Who you like to adopt {name}?</h1>
-                <div className="buttons">
-                  <button onClick={this.adopt}>Yes</button>
-                  <button onClick={this.toggleModal}>
-                    Not now, maybe later...
-                  </button>
+            <Suspense fallback={<h1 className="spinner">Loading modal</h1>}>
+              <Modal>
+                <div>
+                  <h1>Who you like to adopt {name}?</h1>
+                  <div className="buttons">
+                    <button onClick={this.adopt}>Yes</button>
+                    <button onClick={this.toggleModal}>
+                      Not now, maybe later...
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </Modal>
+              </Modal>
+            </Suspense>
           ) : null}
         </div>
       </div>
