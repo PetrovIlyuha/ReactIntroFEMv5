@@ -1,5 +1,5 @@
-import React from "react";
-import pet, { Photo } from "@frontendmasters/pet";
+import React, { ReactChild } from "react";
+import pet, { Photo, AnimalResponse } from "@frontendmasters/pet";
 import { navigate, RouteComponentProps } from "@reach/router";
 import Modal from "./Modal";
 import Carousel from "./Carousel";
@@ -18,6 +18,7 @@ class Details extends React.Component<RouteComponentProps<{ id: string }>> {
     url: "",
     breed: ""
   };
+
   public componentDidMount() {
     if (!this.props.id) {
       navigate("/");
@@ -25,7 +26,7 @@ class Details extends React.Component<RouteComponentProps<{ id: string }>> {
     }
     pet
       .animal(+this.props.id)
-      .then(({ animal }) => {
+      .then(({ animal }: AnimalResponse) => {
         this.setState({
           url: animal.url,
           name: animal.name,
@@ -39,12 +40,13 @@ class Details extends React.Component<RouteComponentProps<{ id: string }>> {
       })
       .catch((err: Error) => this.setState({ error: err }));
   }
-  toggleModal = () => this.setState({ showModal: !this.state.showModal });
-  adopt = () => navigate(this.state.url);
+  public toggleModal = () =>
+    this.setState({ showModal: !this.state.showModal });
+  public adopt = () => navigate(this.state.url);
 
-  render() {
+  public render() {
     if (this.state.loading) {
-      return <div className="spinner"></div>;
+      return <div className="spinner" />;
     }
     const {
       animal,
@@ -75,6 +77,7 @@ class Details extends React.Component<RouteComponentProps<{ id: string }>> {
           <p>{description}</p>
           {showModal ? (
             <Modal>
+              : ReactChild[]
               <div>
                 <h1>Who you like to adopt {name}?</h1>
                 <div className="buttons">
